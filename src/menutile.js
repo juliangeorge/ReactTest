@@ -5,22 +5,30 @@ var MenuTile = React.createClass({
     var cx = React.addons.classSet;
     var classes = cx({
       'tile': true,
-      'owner': this.props.owner,
-      'invitee': this.props.invitee,
-      'process': this.props.process,
-      'calendar': this.props.calendar
+      'owner': this.props.tile.owner,
+      'invitee': this.props.tile.invitee,
+      'process': this.props.tile.process,
+      'calendar': this.props.tile.calendar,
+      'visible-lg': true,
+      'visible-md': true
     });
 
-    var main = this.props.mainimg
-      ? <img src={this.props.mainimg} className="tile content mainimg"/>
-      : this.props.main;
+    var main = this.props.tile.mainimg
+      ? <img src={this.props.tile.mainimg} className={this.props.tile.mainImgClass}/>
+      : <div>
+          <span className="text large">{this.props.tile.main}</span>
+          <span className="text">{this.props.tile.submain}</span>
+        </div>;
 
     return (
       <div className={classes}>
-        <span className="tile content heading">{this.props.heading}</span>
-        <span className="tile content main">{main}</span>
-        <span className="tile content submain">{this.props.submain}</span>
-        <span className="tile content footer">{this.props.footer}</span>
+        <div className="tile-content">
+          <span className="text">{this.props.tile.heading}</span>
+          {main}
+        </div>
+        <div className="tile-footer">
+          <span className="text">{this.props.tile.footer}</span>
+        </div>
       </div>
     );
   }

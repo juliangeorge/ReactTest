@@ -70,12 +70,10 @@ var Workshop = React.createClass({
 		return (
       <div className="my-fluid-container">
   			<div className="row">
-          <div className="col-md-6">
+          <div className="col-md-5">
             <div className="row">
-              <div className="col-md-2">
-                <img src="img/logo.png" />
-              </div>
-              <div className="col-md-10">
+              <img src="img/logo.png" className="mainImg" />
+              <div className="col-xs-8 col-md-8 col-md-8">
                 <div className="row">
                   <span className="title">Input to Workshop</span>
                 </div>
@@ -85,7 +83,7 @@ var Workshop = React.createClass({
               </div>
             </div>
           </div>
-  				<div className="col-md-6">
+  				<div className="col-md-7">
   					<MenuBar />
   				</div>
   			</div>

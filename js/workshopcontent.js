@@ -10,7 +10,7 @@ var WorkshopContent = React.createClass({displayName: 'WorkshopContent',
 			React.DOM.div( {className:"row"}, 
 				React.DOM.div( {className:"col-md-12"}, 
 					" Concerns ",
-					React.DOM.img( {src:"img/add.png", onClick:this.handleClick})
+					React.DOM.img( {src:"img/add.png", className:"pointer", onClick:this.handleClick})
 				)
         	)
 		);

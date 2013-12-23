@@ -70,12 +70,10 @@ var Workshop = React.createClass({displayName: 'Workshop',
 		return (
       React.DOM.div( {className:"my-fluid-container"}, 
   			React.DOM.div( {className:"row"}, 
-          React.DOM.div( {className:"col-md-6"}, 
+          React.DOM.div( {className:"col-md-5"}, 
             React.DOM.div( {className:"row"}, 
-              React.DOM.div( {className:"col-md-2"}, 
-                React.DOM.img( {src:"img/logo.png"} )
-              ),
-              React.DOM.div( {className:"col-md-10"}, 
+              React.DOM.img( {src:"img/logo.png", className:"mainImg"} ),
+              React.DOM.div( {className:"col-xs-8 col-md-8 col-md-8"}, 
                 React.DOM.div( {className:"row"}, 
                   React.DOM.span( {className:"title"}, "Input to Workshop")
                 ),
@@ -85,7 +83,7 @@ var Workshop = React.createClass({displayName: 'Workshop',
               )
             )
           ),
-  				React.DOM.div( {className:"col-md-6"}, 
+  				React.DOM.div( {className:"col-md-7"}, 
   					MenuBar(null )
   				)
   			),
