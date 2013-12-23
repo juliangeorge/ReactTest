@@ -6,9 +6,11 @@ var MenuTile = React.createClass({
   componentDidMount: function() {
     var s = Slider.create(this.props.tile.name, {
       controls: 'none',
-      overflow: false 
+      overflow: false,
+      timing: { 'cube': '1s ease-in' },
+      transition: 'cube'
     });
-    s.add('h', ['one', 'two', 'one']).auto(5000);
+    s.add('h', ['one', 'two', 'one'], 'cube').auto(2000);
     s.start();
   },
 
