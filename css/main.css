@@ -115,6 +115,27 @@ body {
     float: right;
 }
 
+.lastItem {
+    margin-right: 20px;
+}
+
+.navbar-nav > li.close > button {
+    font-size: 18px;
+    height: 51px;
+    border: none;
+}
+
+.send {
+    background-color: #00acee;
+}
+
+.navbar-nav > li.send > button {
+    color: #ffffff;
+    font-size: 18px;
+    height: 51px;
+    border: none;
+}
+
 .genericbox {
     border: 1px solid #81b6e2;
     width: 32.5%;

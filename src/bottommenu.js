@@ -5,12 +5,18 @@ var BottomMenu = React.createClass({
     this.props.submit();
   },
 
+  closeWindow: function() {
+    window.open('','_self'):
+    window.close();
+  },
+
   render: function() {
     return (
       <nav className="navbar navbar-default navbar-fixed-bottom" role="navigation">
-      	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      		<button class="navbar-text navbar-right" onClick={this.submitClicked}>Send all concerns</button>
-      	</div>
+        <ul className="nav navbar-nav navbar-right">
+          <li className="close"><button className="close" onClick={this.closeWindow}>Close</button></li>
+          <li className="lastItem send"><button className="send" onClick={this.submitClicked}>Send all Concerns</button></li>
+        </ul>
       </nav>
     );
   }

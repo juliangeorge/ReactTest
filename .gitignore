@@ -1,3 +1,4 @@
 .lock.pid
 .module-cache
 Thumbs.db
+node_modules
