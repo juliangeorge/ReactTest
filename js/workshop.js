@@ -4,6 +4,14 @@ var ReactTransitionGroup = React.addons.TransitionGroup;
 
 var Workshop = React.createClass({displayName: 'Workshop',
   getInitialState: function() {
+    var concerns = this.resetConcerns();
+    
+    return {
+      concerns: concerns
+    }
+  },
+
+  resetConcerns: function() {
     var concerns = Utils.store('uxrisk-concerns');
 
     for (var i = 0; i < 6; i++) {
@@ -14,10 +22,8 @@ var Workshop = React.createClass({displayName: 'Workshop',
 
       concerns = concerns.concat([newConcern]);
     };
-    
-    return {
-      concerns: concerns
-    }
+
+    return concerns;
   },
 
   deleteConcernClicked: function(concern) {
@@ -55,7 +61,9 @@ var Workshop = React.createClass({displayName: 'Workshop',
   },
 
   submitConcern: function() {
-    console.log("submit");
+    console.log(this.state.concerns);
+    var concerns = this.resetConcerns();
+    this.setState({concerns: concerns});
   },
 
 	render: function() {

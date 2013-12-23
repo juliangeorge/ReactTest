@@ -10,7 +10,7 @@ var MenuTile = React.createClass({displayName: 'MenuTile',
       timing: { 'cube': '1s ease-in' },
       transition: 'cube'
     });
-    s.add('h', ['one', 'two', 'one'], 'cube').auto(2000);
+    s.add('h', ['one', 'two', 'one'], 'cube').auto(10000);
     s.start();
   },
 
