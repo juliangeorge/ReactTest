@@ -9,6 +9,7 @@ var MenuBar = React.createClass({
       mainImgClass: "img",
       submain:      "",
       footer:       "Invited by",
+      name:         "invitedByTile"
     };
 
     var participantsTile = {
@@ -18,6 +19,7 @@ var MenuBar = React.createClass({
       mainImgClass: "img",
       submain:      "",
       footer:       "1 of 2 participants",
+      name:         "participantsTile"
     };
 
     var processTile = {
@@ -27,6 +29,7 @@ var MenuBar = React.createClass({
       mainImgClass: "img down",
       submain:      "",
       footer:       "Process Step",
+      name:         "processTile"
     };
 
     var calendarTile = {
@@ -35,6 +38,7 @@ var MenuBar = React.createClass({
       main:         "28",
       submain:      "Saturday",
       footer:       "Deadline",
+      name:         "calendarTile"
     };
 
     return {

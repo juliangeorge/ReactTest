@@ -1,6 +1,17 @@
 /** @jsx React.DOM */
 
+var Slider = slidr;
+
 var MenuTile = React.createClass({displayName: 'MenuTile',
+  componentDidMount: function() {
+    var s = Slider.create(this.props.tile.name, {
+      controls: 'none',
+      overflow: false 
+    });
+    s.add('h', ['one', 'two', 'one']).auto(5000);
+    s.start();
+  },
+
   render: function() {
     var cx = React.addons.classSet;
     var classes = cx({
@@ -21,13 +32,20 @@ var MenuTile = React.createClass({displayName: 'MenuTile',
         );
 
     return (
-      React.DOM.div( {className:classes}, 
-        React.DOM.div( {className:"tile-content"}, 
-          React.DOM.span( {className:"text"}, this.props.tile.heading),
-          main
+      React.DOM.div( {id:this.props.tile.name, className:"inline"}, 
+        React.DOM.div( {className:classes, 'data-slidr':"one"}, 
+          React.DOM.div( {className:"tile-content"}, 
+            React.DOM.span( {className:"text"}, this.props.tile.heading),
+            main
+          ),
+          React.DOM.div( {className:"tile-footer"}, 
+            React.DOM.span( {className:"text"}, this.props.tile.footer)
+          )
         ),
-        React.DOM.div( {className:"tile-footer"}, 
-          React.DOM.span( {className:"text"}, this.props.tile.footer)
+        React.DOM.div( {className:classes, 'data-slidr':"two"}, 
+          React.DOM.div( {className:"tile-footer"}, 
+            React.DOM.span( {className:"text"}, "Hei")
+          )
         )
       )
     );
