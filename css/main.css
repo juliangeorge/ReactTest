@@ -131,3 +131,21 @@ body {
     text-align: center;
     vertical-align: middle;
 }
+
+.box-enter {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
+
+.box-enter.box-enter-active {
+  opacity: 1;
+}
+
+.box-leave {
+  opacity: 1;
+  transition: opacity .5s ease-out;
+}
+
+.box-leave.box-leave-active {
+  opacity: 0.01;
+}

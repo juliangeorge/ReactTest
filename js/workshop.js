@@ -1,5 +1,7 @@
 /** @jsx React.DOM */
 
+var ReactTransitionGroup = React.addons.TransitionGroup;
+
 var Workshop = React.createClass({displayName: 'Workshop',
   getInitialState: function() {
     var concerns = Utils.store('uxrisk-concerns');
@@ -90,7 +92,9 @@ var Workshop = React.createClass({displayName: 'Workshop',
         WorkshopContent( {clicked:this.addConcernClicked}),
         React.DOM.div( {className:"row"}, 
           React.DOM.div( {className:"col-md-12"}, 
-            concernList
+            ReactTransitionGroup( {transitionName:"box"}, 
+              concernList
+            )
           )
         ),
         BottomMenu( {submit:this.submitConcern})
