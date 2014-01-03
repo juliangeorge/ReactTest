@@ -8,6 +8,7 @@ var Missing = React.createClass({
   				<div className="row">
   					<div className="jumbotron">
   						<h1>Page not found!</h1>
+  						<p><a className="btn btn-primary btn-lg" role="button">Learn more</a></p>
   					</div>
   				</div>
   			</div>

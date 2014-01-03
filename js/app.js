@@ -160,7 +160,8 @@ var Missing = React.createClass({displayName: 'Missing',displayName: 'Missing',
       		React.DOM.div( {className:"my-fluid-container"}, 
   				React.DOM.div( {className:"row"}, 
   					React.DOM.div( {className:"jumbotron"}, 
-  						React.DOM.h1(null, "Page not found!")
+  						React.DOM.h1(null, "Page not found!"),
+  						React.DOM.p(null, React.DOM.a( {className:"btn btn-primary btn-lg", role:"button"}, "Learn more"))
   					)
   				)
   			)
@@ -1880,8 +1881,6 @@ module.exports= {
 
 }));
 
-},{}],"Utils":[function(require,module,exports){
-module.exports=require('yTmIRM');
 },{}],"yTmIRM":[function(require,module,exports){
 var global=typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {};(function browserifyShim(module, exports, define, browserify_shim__define__module__export__) {
 (function (window) {
@@ -1936,6 +1935,10 @@ var global=typeof self !== "undefined" ? self : typeof window !== "undefined" ? 
 
 }).call(global, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
+},{}],"Utils":[function(require,module,exports){
+module.exports=require('yTmIRM');
+},{}],"Zepto":[function(require,module,exports){
+module.exports=require('CP3sLu');
 },{}],"CP3sLu":[function(require,module,exports){
 var global=typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {};(function browserifyShim(module, exports, define, browserify_shim__define__module__export__) {
 /* Zepto v1.1.2 - zepto event ajax form ie - zeptojs.com/license */
@@ -3493,8 +3496,6 @@ window.$ === undefined && (window.$ = Zepto)
 
 }).call(global, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
-},{}],"Zepto":[function(require,module,exports){
-module.exports=require('CP3sLu');
 },{}],22:[function(require,module,exports){
 //     Backbone.js 1.1.0
 
