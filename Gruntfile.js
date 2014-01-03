@@ -25,13 +25,19 @@ module.exports = function(grunt) {
         src: 'js/app/*.js',
         dest: 'js/app.js'
       }
+    },
+    uglify: {
+      my_target: {
+        files: {
+          'js/app.min.js': ['js/app.js']
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-react');
   grunt.loadNpmTasks('grunt-browserify');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  // Default task(s).
-  grunt.registerTask('default', ['react', 'browserify']);
-  //grunt.registerTask('default', ['react']);
+  grunt.registerTask('default', ['react', 'browserify', 'uglify']);
 };

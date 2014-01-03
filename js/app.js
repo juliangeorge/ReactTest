@@ -1841,6 +1841,8 @@ module.exports=require(5)
 
 }));
 
+},{}],"Utils":[function(require,module,exports){
+module.exports=require('yTmIRM');
 },{}],"yTmIRM":[function(require,module,exports){
 var global=typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {};(function browserifyShim(module, exports, define, browserify_shim__define__module__export__) {
 (function (window) {
@@ -1895,8 +1897,6 @@ var global=typeof self !== "undefined" ? self : typeof window !== "undefined" ? 
 
 }).call(global, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
-},{}],"Utils":[function(require,module,exports){
-module.exports=require('yTmIRM');
 },{}],16:[function(require,module,exports){
 // shim for using process in browser
 
