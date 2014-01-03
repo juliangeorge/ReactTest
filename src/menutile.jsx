@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
-
-var Slider = slidr;
+var React = require('react/addons');
+var Slider = require('../vendor/slidr.js');
 
 var MenuTile = React.createClass({
   componentDidMount: function() {
@@ -53,3 +53,5 @@ var MenuTile = React.createClass({
     );
   }
 });
+
+module.exports = MenuTile;

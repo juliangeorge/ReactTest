@@ -1,4 +1,5 @@
 /** @jsx React.DOM */
+var React = require('react/addons');
 
 var BottomMenu = React.createClass({
   submitClicked: function() {
@@ -6,7 +7,7 @@ var BottomMenu = React.createClass({
   },
 
   closeWindow: function() {
-    window.open('','_self'):
+    window.open('', '_self');
     window.close();
   },
 
@@ -21,3 +22,5 @@ var BottomMenu = React.createClass({
     );
   }
 });
+
+module.exports = BottomMenu;

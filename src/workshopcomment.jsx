@@ -1,4 +1,5 @@
 /** @jsx React.DOM */
+var React = require('react/addons');
 
 var WorkshopComment = React.createClass({
 	handleClick: function(concern) {
@@ -33,3 +34,5 @@ var WorkshopComment = React.createClass({
 		);
 	}
 });
+
+module.exports = WorkshopComment;

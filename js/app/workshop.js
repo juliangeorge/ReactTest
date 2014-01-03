@@ -1,5 +1,10 @@
 /** @jsx React.DOM */
-
+var React = require('react/addons');
+var MenuBar = require('./MenuBar');
+var WorkshopComment = require('./WorkshopComment');
+var WorkshopContent = require('./WorkshopContent');
+var BottomMenu = require('./BottomMenu');
+var Utils = require('Utils');
 var ReactTransitionGroup = React.addons.TransitionGroup;
 
 var Workshop = React.createClass({displayName: 'Workshop',
@@ -113,3 +118,5 @@ React.renderComponent(
 	Workshop(null ),
 	document.getElementById('main')
 );
+
+module.exports = Workshop;

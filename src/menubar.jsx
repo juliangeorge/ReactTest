@@ -1,4 +1,6 @@
 /** @jsx React.DOM */
+var React = require('react/addons');
+var MenuTile = require('./MenuTile');
 
 var MenuBar = React.createClass({
   getInitialState: function () {
@@ -60,3 +62,5 @@ var MenuBar = React.createClass({
     );
   }
 });
+
+module.exports = MenuBar;

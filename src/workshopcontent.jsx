@@ -1,4 +1,5 @@
 /** @jsx React.DOM */
+var React = require('react/addons');
 
 var WorkshopContent = React.createClass({
 	handleClick: function(event) {
@@ -16,3 +17,5 @@ var WorkshopContent = React.createClass({
 		);
 	}
 });
+
+module.exports = WorkshopContent;
