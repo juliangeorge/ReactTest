@@ -5,9 +5,9 @@ module.exports = function(grunt) {
     react: {
       files: {
         expand: true,
-        cwd: 'src',
-        src: ['**/*.jsx'],
-        dest: 'js/app',
+        cwd: 'js/jsx',
+        src: ['*.jsx'],
+        dest: 'js/compiled',
         ext: '.js'
       }
     },
@@ -18,11 +18,15 @@ module.exports = function(grunt) {
           Utils: {
             path: './js/vendor/utils.js',
             exports: 'Utils'
+          },
+          Zepto: {
+            path: './js/vendor/zepto.js',
+            exports: '$'
           }
         }
       },
       app: {
-        src: 'js/app/*.js',
+        src: ['js/compiled/*.js', 'js/src/*.js'],
         dest: 'js/app.js'
       }
     },

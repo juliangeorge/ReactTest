@@ -7,7 +7,7 @@ var BottomMenu = require('./BottomMenu');
 var Utils = require('Utils');
 var ReactTransitionGroup = React.addons.TransitionGroup;
 
-var Workshop = React.createClass({displayName: 'Workshop',
+var Workshop = React.createClass({
   getInitialState: function() {
     var concerns = this.resetConcerns();
     
@@ -74,49 +74,51 @@ var Workshop = React.createClass({displayName: 'Workshop',
 	render: function() {
     var that = this;
     var concernList = this.state.concerns.map(function(concern) {
-      return (WorkshopComment(
-                {clicked:that.deleteConcernClicked,
-                save:that.updateConcern,
-                concern:concern} ));
+      return (<WorkshopComment
+                clicked={that.deleteConcernClicked}
+                save={that.updateConcern}
+                concern={concern} />);
     });
 
 		return (
-      React.DOM.div( {className:"my-fluid-container"}, 
-  			React.DOM.div( {className:"row"}, 
-          React.DOM.div( {className:"col-md-5"}, 
-            React.DOM.div( {className:"row"}, 
-              React.DOM.img( {src:"img/logo.png", className:"mainImg"} ),
-              React.DOM.div( {className:"col-xs-8 col-md-8 col-md-8"}, 
-                React.DOM.div( {className:"row"}, 
-                  React.DOM.span( {className:"title"}, "Input to Workshop")
-                ),
-                React.DOM.div( {className:"row"}, 
-                  React.DOM.span( {className:"subtitle"}, "Final (?) end to end test")
-                )
-              )
-            )
-          ),
-  				React.DOM.div( {className:"col-md-7"}, 
-  					MenuBar(null )
-  				)
-  			),
-        WorkshopContent( {clicked:this.addConcernClicked}),
-        React.DOM.div( {className:"row"}, 
-          React.DOM.div( {className:"col-md-12"}, 
-            ReactTransitionGroup( {transitionName:"box"}, 
-              concernList
-            )
-          )
-        ),
-        BottomMenu( {submit:this.submitConcern})
-      )
+      <div className="my-fluid-container">
+  			<div className="row">
+          <div className="col-md-5">
+            <div className="row">
+              <img src="img/logo.png" className="mainImg" />
+              <div className="col-xs-8 col-md-8 col-md-8">
+                <div className="row">
+                  <span className="title">Input to Workshop</span>
+                </div>
+                <div className="row">
+                  <span className="subtitle">Final (?) end to end test</span>
+                </div>
+              </div>
+            </div>
+          </div>
+  				<div className="col-md-7">
+  					<MenuBar />
+  				</div>
+  			</div>
+        <WorkshopContent clicked={this.addConcernClicked}/>
+        <div className="row">
+          <div className="col-md-12">
+            <ReactTransitionGroup transitionName="box">
+              
+              {this.state.concerns.map(function(concern) {
+                return (<WorkshopComment
+                  key={concern.id}
+                  clicked={that.deleteConcernClicked}
+                  save={that.updateConcern}
+                  concern={concern} />);
+              })}
+            </ReactTransitionGroup>
+          </div>
+        </div>
+        <BottomMenu submit={this.submitConcern}/>
+      </div>
 		);
 	}
 });
-
-React.renderComponent(
-	Workshop(null ),
-	document.getElementById('main')
-);
 
 module.exports = Workshop;

@@ -12,6 +12,9 @@
     "grunt-cli": "~0.1.11",
     "envify": "~0.2.0",
     "react": "~0.8.0",
-    "browserify-shim": "~3.1.4"
+    "browserify-shim": "~3.1.4",
+    "backbone": "~1.1.0",
+    "zepto": "0.0.4",
+    "zepto-browserify": "~1.0.0"
   }
 }

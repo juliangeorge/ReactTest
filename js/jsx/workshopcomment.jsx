@@ -13,20 +13,21 @@ var WorkshopComment = React.createClass({
 
 	render: function () {
 		var test = this.props.concern.text;
+		var key = this.props.concern.id;
 		return (
-			<div data-id={this.props.concern.id} className="genericbox">
+			<div key={key} data-id={key} className="genericbox">
 				<div className="genericbox-title">
 					Concern
 					<span
 						className="deleteConcern"
 						onClick={this.handleClick}
-						data-id={this.props.concern.id}>DELETE</span>
+						data-id={key}>DELETE</span>
 				</div>
 				<div>
 					<textarea
 						className="textarea"
 						placeholder="«Add your concern here»"
-						data-id={this.props.concern.id}
+						data-id={key}
 						onChange={this.updateConcern}
 						value={this.props.concern.text}></textarea>
 				</div>

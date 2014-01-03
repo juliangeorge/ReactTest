@@ -13,20 +13,21 @@ var WorkshopComment = React.createClass({displayName: 'WorkshopComment',
 
 	render: function () {
 		var test = this.props.concern.text;
+		var key = this.props.concern.id;
 		return (
-			React.DOM.div( {'data-id':this.props.concern.id, className:"genericbox"}, 
+			React.DOM.div( {key:key, 'data-id':key, className:"genericbox"}, 
 				React.DOM.div( {className:"genericbox-title"}, 
 					" Concern ",
 					React.DOM.span(
 						{className:"deleteConcern",
 						onClick:this.handleClick,
-						'data-id':this.props.concern.id}, "DELETE")
+						'data-id':key}, "DELETE")
 				),
 				React.DOM.div(null, 
 					React.DOM.textarea(
 						{className:"textarea",
 						placeholder:"«Add your concern here»",
-						'data-id':this.props.concern.id,
+						'data-id':key,
 						onChange:this.updateConcern,
 						value:this.props.concern.text})
 				)
