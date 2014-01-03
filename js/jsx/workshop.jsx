@@ -4,6 +4,7 @@ var MenuBar = require('./MenuBar');
 var WorkshopComment = require('./WorkshopComment');
 var WorkshopContent = require('./WorkshopContent');
 var BottomMenu = require('./BottomMenu');
+var Modal = require('./Modal');
 var Utils = require('Utils');
 var ReactTransitionGroup = React.addons.TransitionGroup;
 
@@ -12,8 +13,19 @@ var Workshop = React.createClass({
     var concerns = this.resetConcerns();
     
     return {
-      concerns: concerns
+      concerns: concerns,
+      isModalVisible: false
     }
+  },
+
+  showModal: function() {
+    //isModalVisible = true;
+    this.setState({isModalVisible: true});
+  },
+
+  hideModal: function() {
+    //isModalVisible = false;
+    this.setState({isModalVisible: false});
   },
 
   resetConcerns: function() {
@@ -115,6 +127,7 @@ var Workshop = React.createClass({
             </ReactTransitionGroup>
           </div>
         </div>
+        <Modal isVisible={this.state.isModalVisible} closeAction={this.hideModal} />
         <BottomMenu submit={this.submitConcern}/>
       </div>
 		);
