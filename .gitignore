@@ -2,3 +2,4 @@
 .module-cache
 Thumbs.db
 node_modules
+app.*
