@@ -14,6 +14,10 @@ var MenuTile = React.createClass({displayName: 'MenuTile',
     s.start();
   },
 
+  showModal: function() {
+    this.props.showModal(this.props.tile.data);
+  },
+
   render: function() {
     var cx = React.addons.classSet;
     var classes = cx({
@@ -34,7 +38,7 @@ var MenuTile = React.createClass({displayName: 'MenuTile',
         );
 
     return (
-      React.DOM.div( {id:this.props.tile.name, className:"inline"}, 
+      React.DOM.div( {id:this.props.tile.name, className:"inline", onClick:this.showModal}, 
         React.DOM.div( {className:classes, 'data-slidr':"one"}, 
           React.DOM.div( {className:"tile-content"}, 
             React.DOM.span( {className:"text"}, this.props.tile.heading),

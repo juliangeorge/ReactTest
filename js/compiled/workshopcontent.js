@@ -13,7 +13,7 @@ var WorkshopContent = React.createClass({displayName: 'WorkshopContent',
 					" Concerns ",
 					React.DOM.img( {src:"img/add.png", className:"pointer", onClick:this.handleClick})
 				)
-        	)
+    	)
 		);
 	}
 });

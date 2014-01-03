@@ -1,5 +1,6 @@
 /** @jsx React.DOM */
 var React = require('react/addons');
+var ModalBody = require('./ModalBody');
 
 var Modal = React.createClass({displayName: 'Modal',
   hideModal: function() {
@@ -30,7 +31,7 @@ var Modal = React.createClass({displayName: 'Modal',
               React.DOM.h4( {className:"modal-title", id:"myModalLabel"}, "Modal title")
             ),
             React.DOM.div( {className:"modal-body"}, 
-              " ... "
+              ModalBody( {modalData:this.props.modalData} )
             ),
             React.DOM.div( {className:"modal-footer"}, 
               React.DOM.button( {type:"button", className:"btn btn-default", 'data-dismiss':"modal"}, "Close"),

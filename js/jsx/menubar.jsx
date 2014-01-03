@@ -11,7 +11,8 @@ var MenuBar = React.createClass({
       mainImgClass: "img",
       submain:      "",
       footer:       "Invited by",
-      name:         "invitedByTile"
+      name:         "invitedByTile",
+      data:         "Invited By"
     };
 
     var participantsTile = {
@@ -21,7 +22,8 @@ var MenuBar = React.createClass({
       mainImgClass: "img",
       submain:      "",
       footer:       "1 of 2 participants",
-      name:         "participantsTile"
+      name:         "participantsTile",
+      data:         "Participant"
     };
 
     var processTile = {
@@ -31,7 +33,8 @@ var MenuBar = React.createClass({
       mainImgClass: "img down",
       submain:      "",
       footer:       "Process Step",
-      name:         "processTile"
+      name:         "processTile",
+      data:         "Process"
     };
 
     var calendarTile = {
@@ -40,7 +43,8 @@ var MenuBar = React.createClass({
       main:         "28",
       submain:      "Saturday",
       footer:       "Deadline",
-      name:         "calendarTile"
+      name:         "calendarTile",
+      data:         "Calendar"
     };
 
     return {
@@ -51,13 +55,17 @@ var MenuBar = React.createClass({
     }
   },
 
+  showModal: function(data) {
+    this.props.showModal(data);
+  },
+
   render: function() {
     return (
       <div>
-        <MenuTile tile={this.state.invitedByTile} />
-        <MenuTile tile={this.state.participantsTile} />
-        <MenuTile tile={this.state.processTile} />
-        <MenuTile tile={this.state.calendarTile} />
+        <MenuTile showModal={this.props.showModal} tile={this.state.invitedByTile} />
+        <MenuTile showModal={this.props.showModal} tile={this.state.participantsTile} />
+        <MenuTile showModal={this.props.showModal} tile={this.state.processTile} />
+        <MenuTile showModal={this.props.showModal} tile={this.state.calendarTile} />
       </div>
     );
   }

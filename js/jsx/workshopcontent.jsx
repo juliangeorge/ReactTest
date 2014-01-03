@@ -13,7 +13,7 @@ var WorkshopContent = React.createClass({
 					Concerns
 					<img src="img/add.png" className="pointer" onClick={this.handleClick}/>
 				</div>
-        	</div>
+    	</div>
 		);
 	}
 });

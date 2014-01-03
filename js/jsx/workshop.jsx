@@ -14,17 +14,16 @@ var Workshop = React.createClass({
     
     return {
       concerns: concerns,
-      isModalVisible: false
+      isModalVisible: false,
+      modalData: {}
     }
   },
 
-  showModal: function() {
-    //isModalVisible = true;
-    this.setState({isModalVisible: true});
+  showModal: function(data) {
+    this.setState({isModalVisible: true, modalData: data});
   },
 
   hideModal: function() {
-    //isModalVisible = false;
     this.setState({isModalVisible: false});
   },
 
@@ -109,7 +108,7 @@ var Workshop = React.createClass({
             </div>
           </div>
   				<div className="col-md-7">
-  					<MenuBar />
+  					<MenuBar showModal={this.showModal} />
   				</div>
   			</div>
         <WorkshopContent clicked={this.addConcernClicked}/>
@@ -127,7 +126,7 @@ var Workshop = React.createClass({
             </ReactTransitionGroup>
           </div>
         </div>
-        <Modal isVisible={this.state.isModalVisible} closeAction={this.hideModal} />
+        <Modal isVisible={this.state.isModalVisible} closeAction={this.hideModal} modalData={this.state.modalData} />
         <BottomMenu submit={this.submitConcern}/>
       </div>
 		);
