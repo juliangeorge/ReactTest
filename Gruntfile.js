@@ -31,10 +31,37 @@ module.exports = function(grunt) {
       }
     },
     uglify: {
-      my_target: {
+      production: {
         files: {
           'js/app.min.js': ['js/app.js']
         }
+      }
+    },
+    less: {
+      development: {
+        files: {
+          "css/app.css":"less/main.less"
+        }
+      },
+      production: {
+        options: {
+          cleancss: true,
+          sourceMap: true,
+          sourceMapFilename: "css/app.css.source"
+        },
+        files: {
+          "css/app.css":"less/main.less"
+        }
+      }
+    },
+    watch: {
+      scripts: {
+        files: ['js/jsx/*.jsx'],
+        tasks: ['react', 'browserify']
+      },
+      les: {
+        files: ['less/*.less'],
+        tasks: ['less:development']
       }
     }
   });
@@ -42,6 +69,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-react');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['react', 'browserify', 'uglify']);
+  grunt.registerTask('default', ['react', 'browserify', 'less:development']);
+  grunt.registerTask('production', ['react', 'browserify', 'uglify:production', 'less:production']);
 };

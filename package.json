@@ -15,6 +15,9 @@
     "browserify-shim": "~3.1.4",
     "backbone": "~1.1.0",
     "zepto": "0.0.4",
-    "zepto-browserify": "~1.0.0"
+    "zepto-browserify": "~1.0.0",
+    "less": "~1.6.0",
+    "grunt-contrib-less": "~0.8.3",
+    "grunt-contrib-watch": "~0.5.3"
   }
 }
