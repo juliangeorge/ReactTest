@@ -19,6 +19,7 @@ var Modal = React.createClass({displayName: 'Modal',
     var classes = cx({
       'modal': true,
       'fade': true,
+      'hideOverflow': true,
       'in': this.props.isVisible
     });
 
@@ -34,7 +35,7 @@ var Modal = React.createClass({displayName: 'Modal',
               ModalBody( {modalData:this.props.modalData} )
             ),
             React.DOM.div( {className:"modal-footer"}, 
-              React.DOM.button( {type:"button", className:"btn btn-default", 'data-dismiss':"modal"}, "Close"),
+              React.DOM.button( {type:"button", className:"btn btn-default", 'data-dismiss':"modal", onClick:this.hideModal}, "Close"),
               React.DOM.button( {type:"button", className:"btn btn-primary"}, "Save changes")
             )
           )
